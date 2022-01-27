@@ -1,4 +1,4 @@
-The purpose of this doc is to provide definitions to a list of common words. Use `ctrl+f` or `cmd+f` to search through this doc and find any specific word.
+>The purpose of this doc is to provide definitions to a list of common words. Use `ctrl+f` or `cmd+f` to search through this doc and find any specific word.
 
 ##### action value
 the expected return, of taking action $a$ given state $s$ under policy $π$, $q_{π}(s,a) = 𝔼_{π}[G_{t}|S_{t}=s, A_{t}=a]$
@@ -13,7 +13,7 @@ action-value: $v_{**}(s)=\displaystyle \sum_{s',r} p(s',r|s,a)[r+γ\text{max}_{a
 ##### continuing tasks
 MDP's where episodes do not naturally distinguish from each other
 ##### discount rate $γ$
-The rate that gets applied to future rewards, generally within [0, 1]
+The rate that gets applied to future rewards, generally within [0, 1], that decreases following reward amounts; used because it's mathematically friendly $\to$ a discount rate between [0, 1] guarantees convergence of expected return by the p-series test.
 ##### dynamics $p$
 probability a certain state and reward are returned given a certain state and action
 ##### environment
@@ -27,7 +27,7 @@ the sum of all rewards from timestep $t$ to terminal state
 ##### exploit
 choose best action according to current knowledge
 ##### explore
-try out unknown actions, e.g., sample a random action
+try out sub-optimal actions, e.g., sample a random action
 ##### greedy
 behavior where we exploit
 ##### markov property

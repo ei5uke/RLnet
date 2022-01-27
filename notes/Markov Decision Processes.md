@@ -7,7 +7,7 @@ The key feature of a MDP is the ==*[[Vocab#markov property|Markov Property]]*==,
 
 Similar to bandits, in MDP's the goal is to find actions that give us the most rewards. We can depict the sum of all rewards as $R_{t} + R_{t+1} + ... + R_{T} = G_{t}$, which we call the ==[[Vocab#expected return G_ t|expected return]]== at timestep $t$. 
 
-Given a ==[[Vocab#discount rate γ|discount rate]]==, we can rewrite the expected return formula to the following:
+Given a ==[[Vocab#discount rate γ|discount rate]]==, $γ$, we can rewrite the expected return formula to the following:
 $$G_{t} = R_{t+1} + γR_{t+1} + ... + γR_{T} = R_{t+1} + γG_{t+1}$$
 which works even when it's an episodic task by setting $γ$ to 1 on all non-terminal states and 0 on the terminal state.
 
@@ -19,7 +19,15 @@ $$v_{π}(s) = 𝔼_{π}[G_{t}|S_{t}=s]$$
 The ==[[Vocab#action value|action value]]== is the value, or expected return, of taking action $a$ given state $s$ under policy $π$, denoted:
 $$q_{π}(s,a) = 𝔼_{π}[G_{t}|S_{t}=s, A_{t}=a]$$
 
-We want to continue finding policies that are better than our current policy, and the goal of MDP's is to find the ==[[Vocab#optimal policy|optimal policy]]==, denoted $π_{*}$.
+We want to continue finding policies that are better than our current policy, and the goal of MDP's is to find the ==[[Vocab#optimal policy π_|optimal policy]]==, denoted $π_{*}$.
 
-**Example**
-blob add later
+**Example** *Exercise 3.22 on page 66*
+![[exercise3.22.jpeg]]
+
+**Solution**
+
+$γ$ | $V_{π_{\text{left}}}$ | $V_{π_{\text{right}}}$ | optimal?
+-- | -- | -- | --
+$0$ | $1+0(0)=1$ | $0+0(2)=0$ |$π_{\text{left}}$
+$0.9$ | $1+0.9(0)=1$ | $0+0.9(2)=1.8$ | $π_{\text{right}}$
+$0.5$ | $1+0.5(0)=1$ | $0+0.5(2)=1$ | $\text{equal}$
